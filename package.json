@@ -1,0 +1,30 @@
+{
+  "name": "meguiddo",
+  "description": "My old band. Something I don't want to loose. Why not?",
+  "version": "2016.5.9",
+  "private": true,
+  "homepage": "http://meguiddo.be",
+  "author": {
+    "name": "leny",
+    "email": "info@flatland.be"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/leny/meguiddo.git"
+  },
+  "scripts": {
+    "build:html": "jade ./src/jade/index.jade > ./index.html",
+    "build:stylus": "stylus -u kouto-swiss -p ./src/stylus/styles.styl > ./assets/styles.css",
+    "build:csso": "csso ./assets/styles.css > ./assets/styles.min.css",
+    "build": "npm run build:html && npm run build:stylus && npm run build:csso",
+    "watch": "watch 'npm run build' ."
+  },
+  "devDependencies": {
+    "csso": "^1.8.1",
+    "jade": "^1.11.0",
+    "kouto-swiss": "^0.12.0",
+    "matchdep": "^1.0.1",
+    "stylus": "^0.54.2",
+    "watch": "^0.17.1"
+  }
+}
