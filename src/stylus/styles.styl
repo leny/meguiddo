@@ -61,6 +61,8 @@ li
         size auto 1.6rem
         path.dot
             visibility hidden
+    &.active svg path.dot
+        visibility visible
     & + li
         margin-top .33rem
 
@@ -69,14 +71,24 @@ svg path
 
 .controls
     absolute auto 0 -5rem
-    font-size 2.4rem
     text-align center
     a
+        font-size 0
         color white
         text-decoration none
         text-shadow 0 0 2.5rem rgba( black, .66 )
+        &:before
+            font-size 2.4rem
         &.play-pause
             margin: 0 2.5rem
+            &.play:before
+                content: ""
+            &.pause:before
+                content: ""
+        &.prev:before
+            content: ""
+        &.next:before
+            content: ""
 
 audio
     absolute 0 auto auto -999rem
