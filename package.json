@@ -13,7 +13,7 @@
     "url": "git://github.com/leny/meguiddo.git"
   },
   "scripts": {
-    "build:html": "jade ./src/jade/index.jade > ./index.html",
+    "build:html": "jade -o . ./src/jade/index.jade",
     "build:stylus": "stylus -u kouto-swiss -p ./src/stylus/styles.styl > ./assets/styles.css",
     "build:csso": "csso ./assets/styles.css > ./assets/styles.min.css",
     "build": "npm run build:html && npm run build:stylus && npm run build:csso",
