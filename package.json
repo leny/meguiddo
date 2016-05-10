@@ -16,14 +16,15 @@
     "build:html": "jade -o . ./src/jade/index.jade",
     "build:stylus": "stylus -u kouto-swiss -p ./src/stylus/styles.styl > ./assets/styles.css",
     "build:csso": "csso ./assets/styles.css > ./assets/styles.min.css",
-    "build": "npm run build:html && npm run build:stylus && npm run build:csso",
-    "watch": "watch 'npm run build' ."
+    "build:js": "uglifyjs --compress --mangle -o ./assets/scripts.min.js -- ./src/js/main.js",
+    "build": "npm run build:html && npm run build:stylus && npm run build:csso && npm run build:js"
   },
   "devDependencies": {
     "csso": "^1.8.1",
     "jade": "^1.11.0",
     "kouto-swiss": "^0.12.0",
     "stylus": "^0.54.2",
+    "uglify-js": "^2.6.2",
     "watch": "^0.17.1"
   }
 }
