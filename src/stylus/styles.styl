@@ -19,8 +19,77 @@ ks-color-fallback-enabled = true
 // ----- commons
 
 :focus
-    outline: 0
+    outline 0
 
 html
-    height: 100%
-    font: normal 62.5%/1.5 font-stack( "Helvetica" )
+    height 100%
+    background #313131 url( "../assets/images/bg@2x.png" ) top left repeat
+    background-size: 46px auto
+    font normal 62.5%/1.5 font-stack( "Helvetica" )
+
+body
+    position relative
+    display flex
+    width 100%
+    min-height 100%
+
+main
+    position relative
+    size 28rem
+    margin auto
+    background black url( "../assets/images/cover.jpg" ) center no-repeat
+    background-size contain
+    box-shadow 0 0 4rem rgba( black, .75 )
+
+h1
+    absolute 1rem auto auto 1rem
+    size 60% 3.2rem
+    margin 0
+    svg
+        size auto 100%
+
+ul
+    list-style none
+    absolute auto auto .5rem .5rem
+    size 60% auto
+    margin 0
+    padding 0
+
+li
+    text-align left
+    svg
+        size auto 1.6rem
+        path.dot
+            visibility hidden
+    & + li
+        margin-top .33rem
+
+svg path
+    fill white
+
+.controls
+    absolute auto 0 -5rem
+    font-size 2.4rem
+    text-align center
+    a
+        color white
+        text-decoration none
+        text-shadow 0 0 2.5rem rgba( black, .66 )
+        &.play-pause
+            margin: 0 2.5rem
+
+audio
+    absolute 0 auto auto -999rem
+
++media-query( screen, min-width 480px )
+    main
+        size 36rem
+
+    h1
+        absolute 1.5rem auto auto 1.5rem
+
+    ul
+        absolute auto auto 1rem 1rem
+
+    li + li
+        margin-top .5rem
