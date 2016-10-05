@@ -16,10 +16,13 @@
     "build:html": "jade -o . ./src/jade/index.jade",
     "build:stylus": "stylus -u kouto-swiss -p ./src/stylus/styles.styl > ./assets/styles.css",
     "build:csso": "csso ./assets/styles.css > ./assets/styles.min.css",
-    "build:js": "uglifyjs --compress --mangle -o ./assets/scripts.min.js -- ./src/js/main.js",
+    "build:js": "babel -o ./assets/scripts.min.js -- ./src/js/main.js",
     "build": "npm run build:html && npm run build:stylus && npm run build:csso && npm run build:js"
   },
   "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-es2016": "^6.16.0",
     "csso": "^1.8.1",
     "jade": "^1.11.0",
     "kouto-swiss": "^0.12.0",
