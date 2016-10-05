@@ -6,8 +6,6 @@
  * started at 06/10/2016 (es2016 rewriting)
  */
 
-/* eslint-disable no-invalid-this */
-
 const TRACKS = [
     "assets/audio/meguiddo-01-black-sea.mp3",
     "assets/audio/meguiddo-02-world.mp3",
@@ -57,19 +55,19 @@ Array.from( document.querySelectorAll( "li" ) ).forEach( ( $elt, iIndex ) => {
     } );
 } );
 
-( $playPauseButton = document.querySelector( ".play-pause" ) ).addEventListener( "click", function( e ) {
+( $playPauseButton = document.querySelector( ".play-pause" ) ).addEventListener( "click", ( e ) => {
     e.preventDefault();
 
     if ( !oAudio.src ) {
-        return fChangeTrack();
+        fChangeTrack();
+
+        return;
     }
 
-    oAudio[ this.classList.contains( "pause" ) ? "pause" : "play" ]();
+    oAudio[ $playPauseButton.classList.contains( "pause" ) ? "pause" : "play" ]();
 
-    this.classList.toggle( "pause" );
-    this.classList.toggle( "play" );
-
-    return null;
+    $playPauseButton.classList.toggle( "pause" );
+    $playPauseButton.classList.toggle( "play" );
 } );
 
 document.querySelector( ".prev" ).addEventListener( "click", ( e ) => {
